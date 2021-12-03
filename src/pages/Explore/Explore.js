@@ -4,7 +4,7 @@ import MotoCard from './MotoCard';
 const Explore = () => {
     const [bikes, setBikes] = useState([]);
     useEffect(()=>{
-        fetch('fakeData.json')
+        fetch('http://localhost:5000/bikes')
         .then(res => res.json())
         .then(data => {
             setBikes(data)
