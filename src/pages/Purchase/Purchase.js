@@ -4,17 +4,21 @@ import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import { useForm, Controller } from "react-hook-form";
 import { Button, TextField } from '@mui/material';
+import useAuth from '../../hooks/useAuth';
+import Footer from '../Shared/Footer/Footer';
+import Navigation from '../Shared/Navigation/Navigation';
 
 
 
 const Purchase = () => {
+    const{user} = useAuth();
     const {id} = useParams();
     const [bike, setBike] = useState({});
     const [isLoading, setIsLoading] = useState(true)
     const { control, handleSubmit, reset } = useForm({
         defaultValues:{
-            name: "",
-            email: "",
+            name: user.displayName,
+            email: user.email,
             phone: ""
         }
     });
@@ -53,7 +57,10 @@ const Purchase = () => {
     
 
     return (
+        <>
+        <Navigation></Navigation>
         <div className="container-fluid">
+            
             {   isLoading &&
                 <Box sx={{ width: '100%' }}>
                 <LinearProgress />
@@ -94,18 +101,18 @@ const Purchase = () => {
                 </div>
                 }
 
-                <div className="ms-2">
+                <div className="ms-2 mt-3">
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <Controller
                     name="name"
                     control={control}
-                    render={({ field }) => <TextField {...field} id="standard-basic" label="Name" variant="standard" />}
+                    render={({ field }) => <TextField  {...field} id="standard-basic" label="Name" variant="standard" />}
                 />
                 <br />
                 <Controller
                     name="email"
                     control={control}
-                    render={({ field }) => <TextField {...field} id="standard-basic" label="Email" variant="standard" />}
+                    render={({ field }) => <TextField  {...field} id="standard-basic" label="Email" variant="standard" />}
                 />
                 <br />
                 <Controller
@@ -120,7 +127,10 @@ const Purchase = () => {
                 
             </div>
         </div>
+        
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

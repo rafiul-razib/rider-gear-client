@@ -8,11 +8,11 @@ import TopBanner from './TopBanner';
 const Home = () => {
     return (
         <div>
-        
+            <Navigation></Navigation>
             <TopBanner></TopBanner>
             <NewArrivals></NewArrivals>
             <Review></Review>
-           
+            <Footer></Footer>
         </div>
     );
 };
