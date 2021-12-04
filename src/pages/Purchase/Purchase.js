@@ -65,9 +65,9 @@ const Purchase = () => {
                 <Box sx={{ width: '100%' }}>
                 <LinearProgress />
                 </Box>}
-        <div className="row pt-3">
+        <div className="row pt-1">
             
-                <div className="pt-5">
+                <div className="pt-2">
                     <h1>{bike.name}</h1>
                 </div>
             <div className="col-md-8">

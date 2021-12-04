@@ -1,21 +1,34 @@
+import { LinearProgress } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 import MotoCard from '../Explore/MotoCard';
 
 
 
 const NewArrivals = () => {
+    const[isLoading, setIsLoading]= useState(true)
     const [bikes, setBikes] = useState([]);
     useEffect(()=>{
+        setIsLoading(true)
         fetch('http://localhost:5000/bikes')
         .then(res => res.json())
         .then(data => {
             setBikes(data)
+            setIsLoading(false)
         })
     },[])
 
     const newBikes = bikes.slice(0,6)
     return (
-       <div className="bg-light">
+        <>
+         {   isLoading &&
+                <Box sx={{ width: '100%' }}>
+                <LinearProgress />
+                </Box>}
+        {
+            !isLoading &&
+            <div className="bg-light">
             <div className="container text-center py-4">
             <h2>New Arrivals</h2>
             <div className="row g-3">
@@ -26,6 +39,8 @@ const NewArrivals = () => {
             </div>
         </div>
        </div>
+        }
+       </>
     );
 };
 

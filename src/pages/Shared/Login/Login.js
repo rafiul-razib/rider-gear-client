@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import useFirebase from '../../../hooks/useFirebase';
+import Footer from '../Footer/Footer';
+import Navigation from '../Navigation/Navigation';
 
 const Login = () => {
-    const{user, signInWithEmail, googleSignIn} = useAuth();
+    const{signInWithEmail, googleSignIn} = useAuth();
     const[email, setEmail]= useState("");
     const[password, setPassWord]= useState("");
 
@@ -29,6 +31,8 @@ const Login = () => {
         e.preventDefault()
     }
     return (
+        <>
+        <Navigation></Navigation>
         <div className="container-fluid bg-light">
             <form onSubmit={handleLoginWithPassword} className="w-50 mx-auto pt-5 my-4">
                 <h3>Login here..</h3>
@@ -53,6 +57,8 @@ const Login = () => {
             
             </form>
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import Footer from '../Footer/Footer';
+import Navigation from '../Navigation/Navigation';
 
 const Register = () => {
 
@@ -28,6 +30,8 @@ const Register = () => {
 
 
     return (
+        <>
+        <Navigation></Navigation>
         <div className="container-fluid bg-light">
              <form onSubmit={handleRegistration} className="w-50 mx-auto pt-5 my-4" >
                  <h3>Register here..</h3>
@@ -55,6 +59,8 @@ const Register = () => {
             }
             </form>
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

@@ -1,12 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
     const{user, logOut} = useAuth();
+    const history = useHistory()
 
     const handleSignOut = () =>{
-        logOut()
+        logOut(history)
     }
     return (
         <div>
