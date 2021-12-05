@@ -11,7 +11,7 @@ const NewArrivals = () => {
     const [bikes, setBikes] = useState([]);
     useEffect(()=>{
         setIsLoading(true)
-        fetch('http://localhost:5000/bikes')
+        fetch('https://young-chamber-96832.herokuapp.com/bikes')
         .then(res => res.json())
         .then(data => {
             setBikes(data)

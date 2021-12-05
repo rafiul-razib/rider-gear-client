@@ -30,7 +30,7 @@ const Purchase = () => {
           data.bikePrice = bike.price;
           data.status= "Pending";
 
-          fetch("http://localhost:5000/order", {
+          fetch("https://young-chamber-96832.herokuapp.com/order", {
               method: "POST",
               headers: {
                   "content-type": "application/json"
@@ -49,7 +49,7 @@ const Purchase = () => {
     
     useEffect(()=>{
         setIsLoading(true)
-        fetch(`http://localhost:5000/bikes/${id}`)
+        fetch(`https://young-chamber-96832.herokuapp.com/bikes/${id}`)
         .then(res => res.json())
         .then(data => setBike(data))
         .finally(()=> setIsLoading(false) )
@@ -65,9 +65,9 @@ const Purchase = () => {
                 <Box sx={{ width: '100%' }}>
                 <LinearProgress />
                 </Box>}
-        <div className="row pt-1">
+        <div className="row pt-5">
             
-                <div className="pt-2">
+                <div className="pt-2 mt-4">
                     <h1>{bike.name}</h1>
                 </div>
             <div className="col-md-8">

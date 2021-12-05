@@ -11,7 +11,7 @@ const MyTableRow = (props) => {
     const handleDelete = e =>{
        const proceed = window.confirm("Are you really want to cancel the deal??")
        if(proceed){
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://young-chamber-96832.herokuapp.com/orders/${_id}`, {
           method: "DELETE"
         })
         .then(res => res.json())

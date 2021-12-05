@@ -18,7 +18,7 @@ const MyOrders = () => {
     const[orderReload, setOrderReload]= useState(false)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders?email=${user.email}`)
+        fetch(`https://young-chamber-96832.herokuapp.com/orders?email=${user.email}`)
         .then(res => res.json())
         .then(data =>{
             setOrder(data)
@@ -33,7 +33,7 @@ const MyOrders = () => {
           <TableRow>
             <TableCell>Bike</TableCell>
             <TableCell>Cost</TableCell>
-            <TableCell>Approval</TableCell>
+            <TableCell>Status</TableCell>
             <TableCell align="right">Option</TableCell>
           </TableRow>
         </TableHead>

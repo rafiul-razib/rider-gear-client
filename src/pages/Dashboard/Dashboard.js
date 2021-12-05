@@ -19,7 +19,7 @@ import MakeAdmin from './MakeAdmin';
 import AllOrders from './AllOrders';
 import AddProduct from './AddProduct';
 import ManageProducts from './ManageProducts';
-import './Dashboard.css';
+
 
 const drawerWidth = 240;
 
@@ -43,33 +43,33 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Toolbar />
-      <Link to="/"><Button>Home</Button></Link>
+      <Link to="/"><Button  variant="text">Home</Button></Link>
       <br />
-      <Link to={`${url}/`}><Button>My Orders</Button></Link>
+      <Link to={`${url}/`}><Button  variant="text">My Orders</Button></Link>
       <br />
-      <Link to={`${url}/payment`}><Button>Payment</Button></Link>
+      <Link to={`${url}/payment`}><Button  variant="text">Payment</Button></Link>
       <br />
-      <Link to={`${url}/myReview`}><Button>Review</Button></Link>
+      <Link to={`${url}/myReview`}><Button  variant="text">Review</Button></Link>
       <br />
       
       {
         admin && 
         <Box>
-          <Link to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link>
+          <Link to={`${url}/makeAdmin`}><Button  variant="text">Make Admin</Button></Link>
       
           <br />
-          <Link to={`${url}/allOrders`}><Button>All Orders</Button></Link>
+          <Link to={`${url}/allOrders`}><Button  variant="text">All Orders</Button></Link>
           
           <br />
-          <Link to={`${url}/addProduct`}><Button>Add Product</Button></Link>
+          <Link to={`${url}/addProduct`}><Button  variant="text">Add Product</Button></Link>
           
           <br />
-          <Link to={`${url}/manageProducts`}><Button>Manage Products</Button></Link>
+          <Link to={`${url}/manageProducts`}><Button  variant="text">Manage Products</Button></Link>
         </Box>
       }
       
       <br />
-      <Button onClick={handleLogOut}>Log Out</Button>
+      <Button  variant="text" onClick={handleLogOut}>Log Out</Button>
     
     </div>
   );

@@ -12,7 +12,7 @@ const MyReview = () => {
         reset()
     
 
-        fetch("http://localhost:5000/review", {
+        fetch("https://young-chamber-96832.herokuapp.com/review", {
             method: "POST",
             headers: {
                 "content-type" : "application/json"
