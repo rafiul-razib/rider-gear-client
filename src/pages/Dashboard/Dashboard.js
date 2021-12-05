@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -19,6 +18,7 @@ import MakeAdmin from './MakeAdmin';
 import AllOrders from './AllOrders';
 import AddProduct from './AddProduct';
 import ManageProducts from './ManageProducts';
+import AdminRoute from '../Shared/Login/AdminRoute';
 
 
 const drawerWidth = 240;
@@ -148,18 +148,18 @@ function ResponsiveDrawer(props) {
             <Route path={`${path}/payment`}>
                 <Payment></Payment>
             </Route>
-            <Route path={`${path}/makeAdmin`}>
+            <AdminRoute path={`${path}/makeAdmin`}>
                 <MakeAdmin></MakeAdmin>
-            </Route>
-            <Route path={`${path}/allOrders`}>
+            </AdminRoute>
+            <AdminRoute path={`${path}/allOrders`}>
                 <AllOrders></AllOrders>
-            </Route>
-            <Route path={`${path}/addProduct`}>
+            </AdminRoute>
+            <AdminRoute path={`${path}/addProduct`}>
                 <AddProduct></AddProduct>
-            </Route>
-            <Route path={`${path}/manageProducts`}>
+            </AdminRoute>
+            <AdminRoute path={`${path}/manageProducts`}>
                 <ManageProducts></ManageProducts>
-            </Route>
+            </AdminRoute>
         </Switch>
         
       </Box>
