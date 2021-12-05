@@ -36,7 +36,7 @@ const AllOrdersRow = (props) => {
             <TableCell>{phone}</TableCell>
             <TableCell>{bikeName}</TableCell>
             <TableCell>{status}</TableCell>
-            <TableCell align="right"><Button onClick={handleUpdate} variant="contained">Approve</Button></TableCell>
+            <TableCell align="right"><Button onClick={handleUpdate} variant="contained">Update Status</Button></TableCell>
         </TableRow>
     );
 };
