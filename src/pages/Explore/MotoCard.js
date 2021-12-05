@@ -13,9 +13,9 @@ const MotoCard = (props) => {
                     <h5 className="card-title">{name}</h5>
                     </div>
                    <div>
-                    <h6>Claimed peak power : {intro.ClaimedPeakPower}</h6>
-                    <h6>Estimated dry weight : {intro.EstimatedDryWeight}</h6>
-                    <h6>Power/weight : {intro.PowerPerWeight}</h6>
+                    <h6>Claimed peak power : {intro.ClaimedPeakPower} bhp</h6>
+                    <h6>Estimated dry weight : {intro.EstimatedDryWeight} kg</h6>
+                    <h6>Power/weight : {intro.PowerPerWeight} bhp/kg</h6>
                     <h3>price:${price}</h3>
                     </div>
                 </div>

@@ -1,11 +1,11 @@
 import React from 'react';
-import bike from '../../images/bikes/bike- (4).jpg';
+
 
 const TopBanner = () => {
     return (
         <div>
             <div className="d-block w-100">
-                <img src={bike} alt=""  className="img-fluid"/>
+                <img src="https://i.ibb.co/Hzvpp5x/bike-4.jpg" alt=""  className="img-fluid"/>
             </div>
         </div>
     );
