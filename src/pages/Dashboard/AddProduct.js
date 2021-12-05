@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
   const onSubmit = data => {
     const intro = {ClaimedPeakPower:data.ClaimedPeakPower, EstimatedDryWeight:data.EstimatedDryWeight, PowerPerWeight:data.PowerPerWeight}
     const newData = {...data, intro}
@@ -19,6 +19,7 @@ const AddProduct = () => {
     .then(data =>{
       if(data.insertedId){
         alert("Product added successfully!!")
+        reset()
       }
     })
   };
